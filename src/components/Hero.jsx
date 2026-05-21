@@ -11,11 +11,12 @@ import {
   Code2,
   Database,
   Brain,
+  Heart,
   Wrench,
+  ArrowDown,
 } from "lucide-react";
 import avatar from "../assets/avatar.jpeg";
 import doodle from "../assets/doodle1.png";
-import doodle3 from "../assets/doodle3.png";
 import heroBg from "../assets/hero.png";
 import falls from "../assets/falls.jpg";
 import githubIcon from "../assets/git.png";
@@ -26,6 +27,10 @@ import plants from "../assets/p.png";
 import meshbg from "../assets/gradient-mesh.jpg";
 import workspace from "../assets/workspace.jpg";
 import linkedinIcon from "../assets/linkedin.png";
+import cv from "../assets/sansalacv.pdf";
+import cod from "../assets/cod.svg";
+import topSvg from "../assets/search.svg";
+
 // export const Route = createFileRoute("/")({
 //   component: Portfolio,
 // });
@@ -171,12 +176,11 @@ function Portfolio() {
   return (
     <div ref={ref} className="min-h-screen bg-background text-foreground antialiased">
       {/* Nav */}
-      <header className="sticky top-0 z-40 border-b border-border/60 bg-background/70 backdrop-blur-xl">
+      <header className="sticky top-0 z-40 border-b border-white/10 bg-background/70 backdrop-blur-xl">
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <a href="#" className="flex items-center gap-2 text-sm font-semibold tracking-tight">
-            <span className="bg-gradient-brand h-6 w-6 rounded-md" />
-            Sansala Ranasinghe
-          </a>
+           <a href="#top" className="font-mono text-sm font-semibold tracking-tight">
+              sansala<span className="text-gradient">.dev</span>
+            </a>
           <div className="hidden items-center gap-8 text-sm text-muted-foreground sm:flex">
             <a href="#experience" className="transition-colors hover:text-foreground">Experience</a>
             <a href="#projects" className="transition-colors hover:text-foreground">Projects</a>
@@ -237,11 +241,14 @@ function Portfolio() {
                     View Projects
                     <ArrowUpRight className="h-4 w-4" />
                   </a>
+
                   <a
-                    href="#contact"
+                    href={cv}
+                    download="Sansala_Ranasinghe_CV.pdf"
                     className="inline-flex items-center gap-2 rounded-full border border-border bg-background/80 px-5 py-2.5 text-sm font-medium text-foreground backdrop-blur transition-colors hover:bg-accent"
                   >
-                    Contact Me
+                    Download CV
+                    <ArrowDown className="h-4 w-4" />
                   </a>
                 </div>
               </div>
@@ -566,13 +573,26 @@ function Portfolio() {
             aria-hidden
             className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-indigo-400/30 via-pink-400/30 to-amber-400/30 blur-3xl"
           />
+           {/* Bottom Left SVG */}
+          <img
+            src={cod}
+            alt="Decoration"
+            className="absolute -bottom-6 left-6 w-[24rem] opacity-60 pointer-events-none"
+          />
+
+          {/* Top Right SVG */}
+          <img
+            src={topSvg}
+            alt="Decoration"
+            className="absolute top-0 right-10 w-[19rem] opacity-50 pointer-events-none scale-x-[-1]"
+          />
           <div className="relative mx-auto max-w-3xl px-6 py-28 text-center">
             <p className="fade-in-up text-xs font-medium uppercase tracking-widest text-indigo-500">Contact</p>
             <h2 className="fade-in-up mt-3 text-4xl font-semibold tracking-tight sm:text-5xl">
               Let&rsquo;s build <span className="text-gradient">something</span>.
             </h2>
             <p className="fade-in-up mt-4 text-muted-foreground">
-              Open to internships, full-time roles, and interesting collaborations.
+              Open to full-time roles, freelance projects, and interesting collaborations.
             </p>
             <div className="fade-in-up mt-10 flex flex-wrap justify-center gap-3">
               <a
@@ -611,10 +631,9 @@ function Portfolio() {
       <footer className="border-t border-border/60">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-6 py-8 text-xs text-muted-foreground sm:flex-row">
           <p className="flex items-center gap-2">
-            <span className="bg-gradient-brand h-3 w-3 rounded-sm" />
             © {new Date().getFullYear()} Sansala Ranasinghe
           </p>
-          <p>Designed and built with <Wrench className="inline h-3 w-3" /> &amp; care.</p>
+          <p>Designed and built with <Heart className="inline h-3 w-3" /> &amp; care. | <Wrench className="inline h-3 w-3" /> React + Tailwind</p>
         </div>
       </footer>
     </div>
