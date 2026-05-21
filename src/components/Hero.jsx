@@ -27,7 +27,7 @@ import plants from "../assets/p.png";
 import meshbg from "../assets/gradient-mesh.jpg";
 import workspace from "../assets/workspace.jpg";
 import linkedinIcon from "../assets/linkedin.png";
-import cv from "../assets/sansalacv.pdf";
+import cv from "../assets/sansalacv1.pdf";
 import cod from "../assets/cod.svg";
 import topSvg from "../assets/search.svg";
 
